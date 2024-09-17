@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}View Basket{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h2>Shopping Basket</h2>
+        <ul>
+            {% for item in basket %}
+                <li>{{ item.name }} ({{ item.platform }})</li>
+            {% empty %}
+                <li>Your basket is empty</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

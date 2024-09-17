@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Game Detail{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h2>{{ game.name }}</h2>
+        <p><strong>Description:</strong> {{ game.description }}</p>
+        <p><strong>Platform:</strong> {{ game.platform }}</p>
+        <p><strong>Genre:</strong> {{ game.genre }}</p>
+        <p><strong>Price:</strong> €{{ game.price }}</p>
+        <p><strong>Number in Stock:</strong> {{ game.number_in_stock }}</p>
+        <a href="{% url 'add_to_basket' game_id=game.id %}" style="display: inline-block; padding: 8px 16px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px; font-size: 14px; cursor: pointer;">Add to Basket</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}All Games{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h2>All Games</h2>
+        <ul>
+            {% for game in games %}
+                <li><a href="{% url 'game_detail' game.id %}">{{ game.name }}</a></li>
+            {% empty %}
+                <li>No games available</li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'upload_game' %}" class="btn btn-primary">Upload Game</a>
+        <a href="{% url 'games_by_platform' platform='Xbox One' %}" class="btn btn-primary">Games By Platform</a>
+    </div>
+</div>
+{% endblock %}
